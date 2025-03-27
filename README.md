@@ -1,19 +1,29 @@
 # zabbix1
 Домашнее задание к занятию «Система мониторинга Zabbix»
+
 Задание 1
+
 Установите Zabbix Server с веб-интерфейсом.
 
 Процесс выполнения
+
 Выполняя ДЗ, сверяйтесь с процессом отражённым в записи лекции.
+
 Установите PostgreSQL. Для установки достаточна та версия, что есть в системном репозитороии Debian 11.
+
 Пользуясь конфигуратором команд с официального сайта, составьте набор команд для установки последней версии Zabbix с поддержкой PostgreSQL и Apache.
+
 Выполните все необходимые команды для установки Zabbix Server и Zabbix Web Server.
+
 Требования к результаты
+
 Прикрепите в файл README.md скриншот авторизации в админке.
+
 Приложите в файл README.md текст использованных команд в GitHub.
+
 Решение 1
 
-'''
+```
 sudo -s
 wget https://repo.zabbix.com/zabbix/6.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_latest_6.0+ubuntu24.04_all.deb
 dpkg -i zabbix-release_latest_6.0+ubuntu24.04_all.deb
@@ -25,7 +35,7 @@ zcat /usr/share/zabbix-sql-scripts/postgresql/server.sql.gz | sudo -u zabbix psq
 sed -i 's/# DBPassword=/DBPassword=123456789/g' /etc/zabbix/zabbix_server.conf
 systemctl restart zabbix-server zabbix-agent apache2
 systemctl enable zabbix-server zabbix-agent apache2
-'''
+```
 ![Снимок 207](https://github.com/user-attachments/assets/b776a48e-1674-4557-9915-6fcb8a41c033)
 
 Задание 2
@@ -44,7 +54,7 @@ systemctl enable zabbix-server zabbix-agent apache2
 Приложите в файл README.md текст использованных команд в GitHub
 Решение 2
 
-'''
+```
 sudo -s
 wget https://repo.zabbix.com/zabbix/6.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_latest_6.0+ubuntu24.04_all.deb
 dpkg -i zabbix-release_latest_6.0+ubuntu24.04_all.deb
@@ -53,7 +63,7 @@ apt install zabbix-agent
 systemctl restart zabbix-agent
 systemctl enable zabbix-agent
 
-'''
+```
 
 
 ![Снимок 211](https://github.com/user-attachments/assets/6892d059-7316-4b90-baf9-fb82adb8add5)
