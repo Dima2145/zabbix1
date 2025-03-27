@@ -36,7 +36,8 @@ sed -i 's/# DBPassword=/DBPassword=123456789/g' /etc/zabbix/zabbix_server.conf
 systemctl restart zabbix-server zabbix-agent apache2
 systemctl enable zabbix-server zabbix-agent apache2
 ```
-![Снимок 207](https://github.com/user-attachments/assets/b776a48e-1674-4557-9915-6fcb8a41c033)
+![Снимок 209](https://github.com/user-attachments/assets/f20c607d-e21f-499a-8792-2980b6568926)
+
 
 Задание 2
 Установите Zabbix Agent на два хоста.
